@@ -1,0 +1,431 @@
+@import "reset.css";
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Arial, Helvetica, Helvetica Neue, Arial, sans-serif;
+  font-weight: normal;
+}
+
+h1#page-title {
+  font-size: 30px;
+  line-height: 1em;
+  margin-bottom: 30px;
+  font-family: Helvetica, Arial;
+  font-weight: 100; 
+  color: #828a8f;
+}
+
+h2 {
+  font-size: 18px;
+  font-family: Helvetica;
+  color: #5a973c;
+  font-weight: 300;
+}
+
+h3 {
+  font-size: 13px;
+  font-weight: bold;
+  color: #111;
+  padding-top: 6px;
+  margin-bottom: 6px;
+}
+
+
+h4 {
+  font-size: 12px;
+  font-weight: bold;
+  padding-top: 6px;
+}
+
+h5 {
+  font-size: 18px;
+  font-family: Helvetica;
+  color: #5a973c;
+  font-weight: 300;
+}
+
+h6 {
+  font-size: .8333em;
+  font-weight: bold;
+  line-height: 1.8em;
+  margin-bottom: 1.8em;
+}
+
+h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a:link, a:visited {
+  color: #4a4094;
+  outline: none;
+  text-decoration: none;
+}
+
+a:focus {
+  outline: 1px dotted;
+}
+
+a:hover, a:active, li a.active {
+  color: #A79E35;
+  outline: none;
+  text-decoration: none;
+}
+
+/* Common Styling */
+li ul, li ol { margin: 0; }
+ul, ol { margin: 0 1.5em 1.5em 0; padding-left: 1.5em; }
+ul { list-style-type: disc; }
+ol { list-style-type: decimal; }
+dl { margin: 0 0 1.5em 0; }
+dl dt { font-weight: bold; }
+dd { margin-left: 1.5em; }
+table { margin-bottom: 5px; }
+th, tr, td {padding: 6px; vertical-align: top; border: 1px #999 solid;}
+hr { background: #666; border: 1px; clear: both; float: none; height: 1px; margin: -1px 0 1.5em; width: 100%; }
+fieldset { border: 1px solid #666; margin: .5em 0; padding: 1em; }
+
+/**
+ * Site header
+ */
+.site-header {
+    border-top: 5px solid $grey-color-dark;
+    border-bottom: 1px solid $grey-color-light;
+    min-height: 56px;
+    background-color: $header-color;
+
+    // Positioning context for the mobile navigation icon
+    position: relative;
+}
+
+.site-title {
+    font-size: 26px;
+    line-height: 56px;
+    letter-spacing: -1px;
+    margin-bottom: 0;
+    float: left;
+
+    &,
+    &:visited {
+        color: $grey-color-dark;
+    }
+}
+
+.site-nav {
+    float: right;
+    line-height: 56px;
+
+    .menu-icon {
+        display: none;
+    }
+
+    .page-link {
+        color: $text-color;
+        line-height: $base-line-height;
+
+        // Gaps between nav items, but not on the first one
+        &:not(:first-child) {
+            margin-left: 20px;
+        }
+    }
+
+    @include media-query($on-palm) {
+        position: absolute;
+        top: 9px;
+        right: 30px;
+        background-color: $background-color;
+        border: 1px solid $grey-color-light;
+        border-radius: 5px;
+        text-align: right;
+
+        .menu-icon {
+            display: block;
+            float: right;
+            width: 36px;
+            height: 26px;
+            line-height: 0;
+            padding-top: 10px;
+            text-align: center;
+
+            > svg {
+                width: 18px;
+                height: 15px;
+
+                path {
+                    fill: $grey-color-dark;
+                }
+            }
+        }
+
+        .trigger {
+            clear: both;
+            display: none;
+        }
+
+        &:hover .trigger {
+            display: block;
+            padding-bottom: 5px;
+        }
+
+        .page-link {
+            display: block;
+            padding: 5px 10px;
+        }
+    }
+}
+
+#nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+    font-size: 100%;
+    vertical-align: baseline;
+    padding-top: 70%;
+}
+
+#nav span {
+    background: $header-color;
+    color: #fff;
+    display: block;
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+}
+
+#nav li {
+  float: left;
+  display: block;
+  background: #4B4B4B;
+  position: relative;
+  z-index: 500;
+  margin: 0 1px;
+}
+
+#nav li a {
+  display: block;
+  //padding: 6px 5px 0 5px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+    z-index: 1;
+    line-height: 20px;
+}
+
+#nav ul {
+  position: absolute;
+  left: 0;
+  display: none;
+  margin: 0 0 0 -1px;
+  padding: 0;
+  list-style: none;
+}
+
+#nav ul li {
+  float: left;
+  border-top: 1px solid #fff;
+  width: 100%;
+  white-space: nowrap;
+}
+
+#nav ul a {
+  display: block;
+  //height: 15px;
+  padding:  3px;
+  color: #fff;
+  text-align: left;
+    z-index: 1;
+}
+
+#nav a:hover {
+  text-decoration: none;
+  background-color: #F86808;
+}
+
+/**
+ * Site footer
+ */
+.site-footer {
+    border-top: 1px solid $grey-color-light;
+    padding: 10px;
+    background-color: $header-color;
+}
+
+.footer-heading {
+    font-size: 12px;
+    margin-bottom: auto;
+}
+
+.contact-list,
+.social-media-list {
+    list-style: none;
+    margin-left: 0;
+}
+
+.footer-col-wrapper {
+    font-size: 15px;
+    color: $grey-color;
+    margin-left: -$spacing-unit / 2;
+    @extend %clearfix;
+}
+
+.footer-col {
+    float: left;
+    margin-bottom: auto;
+    padding-left: $spacing-unit / 2;
+}
+
+.footer-col-1 {
+    width: -webkit-calc(60% - (#{$spacing-unit} / 2));
+    width:         calc(60% - (#{$spacing-unit} / 2));
+    font-size: 11px;
+}
+
+.footer-col-2 {
+    width: -webkit-calc(20% - (#{$spacing-unit} / 2));
+    width:         calc(20% - (#{$spacing-unit} / 2));
+}
+
+.footer-col-3 {
+    width: -webkit-calc(40% - (#{$spacing-unit} / 2));
+    width:         calc(40% - (#{$spacing-unit} / 2));
+    font-size: 11px;
+    float: right;
+    text-align: right;
+}
+
+@include media-query($on-laptop) {
+    .footer-col-1,
+    .footer-col-2 {
+        width: -webkit-calc(50% - (#{$spacing-unit} / 2));
+        width:         calc(50% - (#{$spacing-unit} / 2));
+    }
+
+    .footer-col-3 {
+        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+        width:         calc(100% - (#{$spacing-unit} / 2));
+    }
+}
+
+@include media-query($on-palm) {
+    .footer-col {
+        float: none;
+        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+        width:         calc(100% - (#{$spacing-unit} / 2));
+    }
+}
+
+
+
+/**
+ * Page content
+ */
+.page-content {
+    padding: $spacing-unit 0;
+    font-family: Arial, Helvetica, Lucida Grande, Verdana, Arial, sans-serif;
+	font-size: 12px;
+	line-height: 16px;
+	margin: 0;
+	padding: 0;
+}
+
+.page-heading {
+    font-size: 20px;
+}
+
+.post-list {
+    margin-left: 0;
+    list-style: none;
+
+    > li {
+        margin-bottom: $spacing-unit;
+    }
+}
+
+.post-meta {
+    font-size: $small-font-size;
+    color: $grey-color;
+}
+
+.post-link {
+    display: block;
+    font-size: 24px;
+}
+
+/**
+ * Posts
+ */
+.post-header {
+    margin-bottom: $spacing-unit;
+}
+
+.post-title {
+    font-size: 42px;
+    letter-spacing: -1px;
+    line-height: 1;
+
+    @include media-query($on-laptop) {
+        font-size: 36px;
+    }
+}
+
+.post-content {
+    margin-bottom: $spacing-unit;
+
+    h2 {
+        font-size: 32px;
+
+        @include media-query($on-laptop) {
+            font-size: 28px;
+        }
+    }
+
+    h3 {
+        font-size: 26px;
+
+        @include media-query($on-laptop) {
+            font-size: 22px;
+        }
+    }
+
+    h4 {
+        font-size: 20px;
+
+        @include media-query($on-laptop) {
+            font-size: 18px;
+        }
+    }
+}
+
+
+
+/* Database Table */
+.view-med-plant-rna-seq-database {
+  margin-top: 0px;
+}
+.view-med-plant-rna-seq-database .views-exposed-widgets {
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+.view-med-plant-rna-seq-database table {
+  width: 100%;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+.view-med-plant-rna-seq-database th { 
+  background: #4a4094;
+  color: #fff;
+  font-weight: normal;
+}
+td.views-field-field-species { font-style: italic;}
+th.views-field-field-assembled-data-path { width: 25%;}
+th.views-field-field-readme-path { width: 10%; }
+th.views-field-field-raw-reads { width: 25%; }
+.view-med-plant-rna-seq-database td.views-field-edit-node { font-size: 11px; width: 5%;}
+
+.view-med-plant-rna-seq-database .views-exposed-form label {
+  color: #666;
+}
