@@ -4,7 +4,7 @@ description: > # this means to ignore newlines until "baseurl:"
   The purpose of the MedPlant RNAseq  website is to provide access to data and resources
   from the Kutchan laboratory.
 #baseurl: "http://medplantrnaseq.org" # site url
-baseurl: "http://medplantrnaseq.org" # site url
+baseurl: "https://medplantrnaseq.org" # site url
 
 # Build settings
 markdown: kramdown
